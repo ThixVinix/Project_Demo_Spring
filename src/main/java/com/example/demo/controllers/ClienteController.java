@@ -128,7 +128,7 @@ public class ClienteController {
 		cliente.setDataAtualizacaoRegistro(LocalDateTime.now(ZoneId.of("UTC")));
 		log.debug("PUT atualizarCliente - clienteId atualizado: {} ", cliente.getClienteId());
 		log.info("Cliente atualizado com sucesso - clienteId {} ", cliente.getClienteId());
-		return ResponseEntity.ok().body(clienteService.save(cliente));
+		return ResponseEntity.ok(clienteService.save(cliente));
 	}
 
 	@ApiOperation(notes = "Endpoint para visualizar todos os cliente", value = "Visualiza todos os clientes", httpMethod = "GET", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -140,7 +140,7 @@ public class ClienteController {
 	@ResponseBody
 	public ResponseEntity<Page<Cliente>> getAllClientes(SpecificationTemplate.ClienteSpec spec,
 			@PageableDefault(page = 0, size = 10, sort = "clienteId", direction = Sort.Direction.ASC) Pageable pageable) {
-		return ResponseEntity.ok().body(clienteService.findAll(spec, pageable));
+		return ResponseEntity.ok(clienteService.findAll(spec, pageable));
 	}
 
 	@ApiOperation(notes = "Endpoint para visualizar um determinado cliente", value = "Visualiza um determinado cliente", httpMethod = "GET", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -157,7 +157,7 @@ public class ClienteController {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(NOT_FOUND_CLIENTE);
 		}
 
-		return ResponseEntity.ok().body(clienteOptional.get());
+		return ResponseEntity.ok(clienteOptional.get());
 	}
 
 }
