@@ -68,7 +68,7 @@ public class PedidoController {
 	@ApiResponses({ @ApiResponse(code = 201, message = CREATED_PEDIDO, response = Pedido.class),
 			@ApiResponse(code = 400, message = BAD_REQUEST_MESSAGE, response = BadRequest.class),
 			@ApiResponse(code = 500, message = INTERNAL_SERVER_ERROR_MESSAGE, response = InternalServerError.class) })
-	@PostMapping("/clientes/{clienteId}/pedidos")
+	@PostMapping(value = "/clientes/{clienteId}/pedidos", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Object> salvarPedido(@PathVariable(value = "clienteId") UUID clienteId,
 			@RequestBody @Valid PedidoDto pedidoDto) {
 
@@ -95,7 +95,7 @@ public class PedidoController {
 			@ApiResponse(code = 400, message = BAD_REQUEST_MESSAGE, response = BadRequest.class),
 			@ApiResponse(code = 404, message = NOT_FOUND_PEDIDO_CLIENTE, response = NotFound.class),
 			@ApiResponse(code = 500, message = INTERNAL_SERVER_ERROR_MESSAGE, response = InternalServerError.class) })
-	@DeleteMapping("/clientes/{clienteId}/pedidos/{pedidoId}")
+	@DeleteMapping(value = "/clientes/{clienteId}/pedidos/{pedidoId}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Object> deletarPedido(@PathVariable(value = "clienteId") UUID clienteId,
 			@PathVariable(value = "pedidoId") UUID pedidoId) {
 		log.debug("DELETE deletarPedido - pedidoId recebido: {} ", pedidoId);
@@ -110,12 +110,12 @@ public class PedidoController {
 		return ResponseEntity.ok().body("Pedido deletado com sucesso.");
 	}
 
-	@ApiOperation(notes = "Endpoint para alterar um pedido", value = "Altera um pedido", httpMethod = "PUT", produces = MediaType.APPLICATION_JSON_VALUE)
+	@ApiOperation(notes = "Endpoint para atualizar um pedido", value = "Atualiza um pedido", httpMethod = "PUT", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ApiResponses({ @ApiResponse(code = 200, message = EDITED_PEDIDO, response = Pedido.class),
 			@ApiResponse(code = 400, message = BAD_REQUEST_MESSAGE, response = BadRequest.class),
 			@ApiResponse(code = 404, message = NOT_FOUND_PEDIDO_CLIENTE, response = NotFound.class),
 			@ApiResponse(code = 500, message = INTERNAL_SERVER_ERROR_MESSAGE, response = InternalServerError.class) })
-	@PutMapping("/clientes/{clienteId}/pedidos/{pedidoId}")
+	@PutMapping(value = "/clientes/{clienteId}/pedidos/{pedidoId}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Object> atualizarPedido(@PathVariable(value = "clienteId") UUID clienteId,
 			@PathVariable(value = "pedidoId") UUID pedidoId, @RequestBody @Valid PedidoDto pedidoDto) {
 		log.debug("PUT atualizarPedido - pedidoDto recebido: {} ", pedidoDto.toString());
@@ -138,7 +138,7 @@ public class PedidoController {
 			@ApiResponse(code = 400, message = BAD_REQUEST_MESSAGE, response = BadRequest.class),
 			@ApiResponse(code = 404, message = NOT_FOUND_PEDIDO, response = NotFound.class),
 			@ApiResponse(code = 500, message = INTERNAL_SERVER_ERROR_MESSAGE, response = InternalServerError.class) })
-	@GetMapping("/clientes/{clienteId}/pedidos")
+	@GetMapping(value = "/clientes/{clienteId}/pedidos", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Page<Pedido>> getAllPedidos(SpecificationTemplate.PedidoSpec spec,
 			@PageableDefault(page = 0, size = 10, sort = "pedidoId", direction = Sort.Direction.ASC) Pageable pageable,
 			@PathVariable(value = "clienteId") UUID clienteId) {
@@ -151,7 +151,7 @@ public class PedidoController {
 			@ApiResponse(code = 400, message = BAD_REQUEST_MESSAGE, response = BadRequest.class),
 			@ApiResponse(code = 404, message = NOT_FOUND_PEDIDO_CLIENTE, response = NotFound.class),
 			@ApiResponse(code = 500, message = INTERNAL_SERVER_ERROR_MESSAGE, response = InternalServerError.class) })
-	@GetMapping("/clientes/{clienteId}/pedidos/{pedidoId}")
+	@GetMapping(value = "/clientes/{clienteId}/pedidos/{pedidoId}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Object> getOnePedido(@PathVariable(value = "clienteId") UUID clienteId,
 			@PathVariable(value = "pedidoId") UUID pedidoId) {
 
