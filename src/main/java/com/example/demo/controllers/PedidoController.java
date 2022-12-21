@@ -142,8 +142,8 @@ public class PedidoController {
 	public ResponseEntity<Page<Pedido>> getAllPedidos(SpecificationTemplate.PedidoSpec spec,
 			@PageableDefault(page = 0, size = 10, sort = "pedidoId", direction = Sort.Direction.ASC) Pageable pageable,
 			@PathVariable(value = "clienteId") UUID clienteId) {
-		return ResponseEntity.ok().body(
-				pedidoService.findAllByCliente(SpecificationTemplate.pedidoClienteId(clienteId).and(spec), pageable));
+		return ResponseEntity.ok(pedidoService.findAllByCliente(SpecificationTemplate.pedidoClienteId(clienteId).and(spec), pageable));
+				
 	}
 
 	@ApiOperation(notes = "Endpoint para visualizar um determinado pedido", value = "Visualiza um determinado pedido", httpMethod = "GET", produces = MediaType.APPLICATION_JSON_VALUE)
