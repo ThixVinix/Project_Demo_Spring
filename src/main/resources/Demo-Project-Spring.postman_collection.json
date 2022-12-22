@@ -1,0 +1,510 @@
+{
+	"info": {
+		"_postman_id": "8d6897b3-0ff1-4779-beee-cf4c08ee0921",
+		"name": "Demo-Project-Spring",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5844972"
+	},
+	"item": [
+		{
+			"name": "CLIENTES",
+			"item": [
+				{
+					"name": "GET ALL CLIENTES",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Curso 1",
+									"disabled": true
+								},
+								{
+									"key": "telefone",
+									"value": "11169243579",
+									"disabled": true
+								},
+								{
+									"key": "situacaoUsuario",
+									"value": "ATIVO",
+									"disabled": true
+								},
+								{
+									"key": "username",
+									"value": "Mario",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "mario@teste.com",
+									"disabled": true
+								},
+								{
+									"key": "cpf",
+									"value": "11403113017",
+									"disabled": true
+								},
+								{
+									"key": "nomeCompleto",
+									"value": "Mario Júnior",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "dataCriacaoRegistro,DESC",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "clienteId",
+									"value": "5d6a4825-252c-4423-9e9d-4b309d8ec7b4",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ONE CLIENTES",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clientes/8752c1a1-fb6a-4b6f-b552-2245a80d0ff4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"8752c1a1-fb6a-4b6f-b552-2245a80d0ff4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST CLIENTES",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nomeCompleto\": \"Mario Júnior\",\r\n    \"username\": \"Mario\",\r\n    \"password\": \"0Qx7BGhRGF\",\r\n    \"email\": \"mario@teste.com\",\r\n    \"cpf\": \"11403113017\",\r\n    \"telefone\": \"11169243579\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE CLIENTES",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clientes/8752c1a1-fb6a-4b6f-b552-2245a80d0ff4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"8752c1a1-fb6a-4b6f-b552-2245a80d0ff4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE CLIENTES",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nomeCompleto\": \"Diego Martins\",\r\n    \"username\": \"Diego\",\r\n    \"password\": \"GTIBljmwfA\",\r\n    \"email\": \"diego@test.com\",\r\n    \"cpf\": \"85970827045\",\r\n    \"telefone\": \"11678897444\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clientes/8752c1a1-fb6a-4b6f-b552-2245a80d0ff4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"8752c1a1-fb6a-4b6f-b552-2245a80d0ff4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PEDIDOS",
+			"item": [
+				{
+					"name": "POST PEDIDO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codNotaFiscal\": \"63474351453154353513535134\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clientes/4908041d-aa80-47e9-a211-8d4c2acf369e/pedidos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"4908041d-aa80-47e9-a211-8d4c2acf369e",
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL PEDIDOS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clientes/fcfa5800-f5b4-48ff-9533-610f34829700/pedidos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"fcfa5800-f5b4-48ff-9533-610f34829700",
+								"pedidos"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "dataCriacao,ASC",
+									"disabled": true
+								},
+								{
+									"key": "codNotaFiscal",
+									"value": "4321421423412",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ONE PEDIDO",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clientes/fcfa5800-f5b4-48ff-9533-610f34829700/pedidos/55c11919-b9c0-458a-892a-96d7fbbfb2dd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"fcfa5800-f5b4-48ff-9533-610f34829700",
+								"pedidos",
+								"55c11919-b9c0-458a-892a-96d7fbbfb2dd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE PEDIDO",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clientes/20923d5d-42e4-4984-9e54-dcbf27af8378/pedidos/7f2897f4-534f-4a52-9fde-0d91539b4bdd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"20923d5d-42e4-4984-9e54-dcbf27af8378",
+								"pedidos",
+								"7f2897f4-534f-4a52-9fde-0d91539b4bdd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT PEDIDO",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codNotaFiscal\": \"5435431423421343124231\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clientes/8c953558-1380-4cd5-b0bb-9588f0e6b70e/pedidos/3e047de2-9305-4a13-8d2d-014eb1cb2cf6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"8c953558-1380-4cd5-b0bb-9588f0e6b70e",
+								"pedidos",
+								"3e047de2-9305-4a13-8d2d-014eb1cb2cf6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PRODUTOS",
+			"item": [
+				{
+					"name": "POST PRODUTO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\" : \"Produto A\",\r\n    \"descricao\": \"Descrição Produto A\",\r\n    \"imagemProduto\": \"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.apple.com%2Fbr%2Fshop%2Fbuy-ipad%2Fipad-mini%2F64gb-cinza-espacial-wifi-cellular&psig=AOvVaw0O7-cLrXeww79ooAs\",\r\n     \"valor\": \"7000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pedidos/82628e1f-f022-43b3-a7b7-5cc971367225/produtos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pedidos",
+								"82628e1f-f022-43b3-a7b7-5cc971367225",
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL PRODUTO",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pedidos/55c11919-b9c0-458a-892a-96d7fbbfb2dd/produtos/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pedidos",
+								"55c11919-b9c0-458a-892a-96d7fbbfb2dd",
+								"produtos",
+								""
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "Nome Produto",
+									"disabled": true
+								},
+								{
+									"key": "descricao",
+									"value": "Descricao Produto",
+									"disabled": true
+								},
+								{
+									"key": "imagemProduto",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "valor",
+									"value": "50.00",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "dataCriacao,ASC",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ONE PRODUTO",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pedidos/1a070e90-a109-4948-827d-a4c94239149c/produtos/6b4027db-411b-49d8-b31b-efff91794a9d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pedidos",
+								"1a070e90-a109-4948-827d-a4c94239149c",
+								"produtos",
+								"6b4027db-411b-49d8-b31b-efff91794a9d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE PRODUTO",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pedidos/2666fb8b-1801-4059-b3e9-a15d6e7a2443/produtos/ae5395ca-632e-4da9-810f-b7ef808b8809",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pedidos",
+								"2666fb8b-1801-4059-b3e9-a15d6e7a2443",
+								"produtos",
+								"ae5395ca-632e-4da9-810f-b7ef808b8809"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT PRODUTO",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\" : \"Produto A\",\r\n    \"descricao\": \"Descrição Produto A Editado\",\r\n    \"imagemProduto\": \"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.apple.com%2Fbr%2Fshop%2Fbuy-ipad%2Fipad-mini%2F64gb-cinza-espacial-wifi-cellular&psig=AOvVaw0O7-cLrXeww79ooAs1eW47&ust=1668201683321000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCOiP79fFpPsCFQAAAAAdAAAAABAG\",\r\n     \"valor\": \"7500.00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pedidos/2666fb8b-1801-4059-b3e9-a15d6e7a2443/produtos/9e77f9f1-2400-4c1e-b788-d31d4164ff1c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pedidos",
+								"2666fb8b-1801-4059-b3e9-a15d6e7a2443",
+								"produtos",
+								"9e77f9f1-2400-4c1e-b788-d31d4164ff1c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
